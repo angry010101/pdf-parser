@@ -13,9 +13,9 @@ std = CnStd()
 
 def parse_args():
     parser = argparse.ArgumentParser(
-        prog='ProgramName',
-        description='What the program does',
-        epilog='Text at the bottom of help')
+        prog='PDFParser',
+        description='Parses math formulas from pdf',
+        epilog='See source code for more info')
 
     parser.add_argument('-f', '--file')  # positional argument
     parser.add_argument('-d', '--directory')  # option that takes a value
@@ -85,8 +85,8 @@ def remove_files(path):
 
 
 if __name__ == '__main__':
-    # pdf_file, directory = parse_args()
-    pdf_file, directory = "pdfs/Datasheet_SHT4x.pdf", "output/"
+    pdf_file, directory = parse_args()
+    #pdf_file, directory = "pdfs/Datasheet_SHT4x.pdf", "output/"
     check_args(pdf_file, directory)
     check_dir_exists(directory)
     parse_pdf(pdf_file, directory)
